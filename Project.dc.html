@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a14;--panel:#0b0f1e;--panel-a:rgba(11,15,30,0.85);--panel-hover:#0f1530;--card-grad:linear-gradient(180deg,#0d1224,#0a0e1c);--flag-grad:linear-gradient(180deg,#0e1430,#0a0e1c);--flag-glow:radial-gradient(ellipse 70% 90% at 90% 10%,rgba(99,132,255,0.30),transparent 65%);--talk-grad:linear-gradient(135deg,rgba(99,132,255,0.10),rgba(11,15,30,0.6));--hero-bg:radial-gradient(ellipse 50% 60% at 78% 50%,rgba(99,132,255,0.28),transparent 65%),radial-gradient(ellipse 40% 40% at 20% 100%,rgba(56,189,248,0.10),transparent 70%);--dot:rgba(255,255,255,0.10);--fg:#eef1f8;--fg-strong:#fff;--fg-2:#a9b3cc;--fg-2b:#c3cbe0;--fg-3:#8a95b3;--fg-4:#5b6584;--chip-fg:#dbe4ff;--accent:#6f8bff;--accent-soft:#9db4ff;--grad-text:linear-gradient(90deg,#9db4ff,#dbe4ff);--line:rgba(255,255,255,0.08);--line-2:rgba(255,255,255,0.16);--fill:rgba(255,255,255,0.05);--fill-hover:rgba(255,255,255,0.10);--tint:rgba(157,180,255,0.08);--tint-line:rgba(157,180,255,0.20);--tint-line-2:rgba(157,180,255,0.35);--tint-line-3:rgba(157,180,255,0.6);--inv-bg:#eef1f8;--inv-bg-hover:#fff;--inv-fg:#070a14;--shadow-lg:0 24px 60px rgba(0,0,0,0.45);--btn-shadow:0 0 0 1px rgba(157,180,255,0.3),0 12px 40px rgba(79,109,245,0.35);--lb-bg:rgba(4,6,14,0.92);--sb-track:#070a14;--sb-thumb:#2a3350;--sb-thumb-hover:#3b4670;--scheme:dark}
+:root[data-theme="light"]{--bg:#faf9fb;--panel:#ffffff;--panel-a:rgba(255,255,255,0.85);--panel-hover:#f3f4fb;--card-grad:linear-gradient(180deg,#ffffff,#f7f8fc);--flag-grad:linear-gradient(180deg,#ffffff,#f5f6fc);--flag-glow:radial-gradient(ellipse 70% 90% at 90% 10%,rgba(111,139,255,0.18),transparent 65%),radial-gradient(ellipse 40% 60% at 10% 100%,rgba(253,186,140,0.16),transparent 65%);--talk-grad:linear-gradient(135deg,rgba(111,139,255,0.10),rgba(255,255,255,0.7));--hero-bg:radial-gradient(at 8% 12%,rgba(111,139,255,0.28) 0px,transparent 45%),radial-gradient(at 90% 8%,rgba(253,186,140,0.28) 0px,transparent 45%),radial-gradient(at 82% 72%,rgba(244,163,199,0.24) 0px,transparent 50%),radial-gradient(at 22% 90%,rgba(157,180,255,0.30) 0px,transparent 50%),radial-gradient(at 55% 40%,rgba(255,255,255,0.85) 0px,transparent 55%);--dot:rgba(13,18,38,0.12);--fg:#0d1226;--fg-strong:#000;--fg-2:#4a5270;--fg-2b:#3d4560;--fg-3:#5f6786;--fg-4:#8a91a8;--chip-fg:#2c3fa8;--accent:#3b57e0;--accent-soft:#4f6df5;--grad-text:linear-gradient(90deg,#3b57e0,var(--accent));--line:rgba(13,18,38,0.09);--line-2:rgba(13,18,38,0.16);--fill:rgba(255,255,255,0.7);--fill-hover:rgba(13,18,38,0.06);--tint:rgba(79,109,245,0.08);--tint-line:rgba(79,109,245,0.22);--tint-line-2:rgba(79,109,245,0.35);--tint-line-3:rgba(79,109,245,0.6);--inv-bg:#0d1226;--inv-bg-hover:#1a2140;--inv-fg:#fff;--shadow-lg:0 24px 60px rgba(13,18,38,0.14);--btn-shadow:0 12px 32px rgba(59,87,224,0.30);--lb-bg:rgba(250,249,251,0.94);--sb-track:#faf9fb;--sb-thumb:#c9cde0;--sb-thumb-hover:#aeb4cf;--scheme:light}
+html{color-scheme:var(--scheme);scrollbar-color:var(--sb-thumb) var(--sb-track)}
+::-webkit-scrollbar{width:10px;height:10px;background:var(--sb-track)}
+::-webkit-scrollbar-thumb{background:var(--sb-thumb);border-radius:8px;border:2px solid var(--sb-track)}
+::-webkit-scrollbar-thumb:hover{background:var(--sb-thumb-hover)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:var(--fg);text-decoration:none}a:hover{color:var(--accent-soft)}
+</style>
+</helmet>
+<div style="background:var(--bg);min-height:100vh;position:relative;overflow:hidden">
+  <div style="position:fixed;inset:0;background:var(--hero-bg);pointer-events:none;z-index:0"></div>
+  <nav style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(20px,4vw,64px);font-size:14px;font-weight:500;gap:16px">
+    <a href="Home.dc.html" style="display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-0.01em"><span style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent-soft),#4f6df5);display:inline-block"></span>Abdelbaky</a>
+    <div style="display:flex;align-items:center;gap:10px;flex:none;white-space:nowrap"><button onClick="{{ toggleTheme }}" aria-label="Toggle theme" title="Toggle light / dark" style="width:38px;height:38px;border-radius:999px;border:1px solid var(--line-2);background:var(--fill);color:var(--fg);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:none;padding:0" style-hover="background:var(--fill-hover)">{{ themeIcon }}</button><a href="Home.dc.html#work" style="border:1px solid var(--line-2);padding:9px 16px;border-radius:999px;color:var(--fg-2b)" style-hover="background:var(--fill-hover);color:var(--fg-strong)">← All work</a></div>
+  </nav>
+  <article style="position:relative;max-width:1100px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,64px) 80px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em"><span style="border:1px solid var(--tint-line-2);background:var(--tint);border-radius:6px;padding:4px 9px;font-size:11px;color:var(--accent-soft)">{{ p.kind }}</span><span>{{ p.tag }} · {{ p.year }}</span></div>
+    <h1 style="margin:18px 0 0;font-size:clamp(38px,5.6vw,80px);font-weight:700;letter-spacing:-0.04em;line-height:1.0;max-width:16ch;text-wrap:balance">{{ p.title }}</h1>
+    <p style="margin:24px 0 0;font-size:19px;line-height:1.55;color:var(--fg-2);max-width:60ch">{{ p.short }}</p>
+    <sc-if value="{{ p.thesis }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:28px;display:inline-flex;align-items:center;gap:12px;border:1px solid var(--tint-line-2);background:var(--tint);border-radius:14px;padding:14px 18px;font-size:14.5px;line-height:1.5;color:var(--fg-2b);max-width:64ch"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:var(--accent-soft);flex:none">RESEARCH</span>Developed as the applied outcome of my Master's thesis on agentic AI for BIM-based project control — the platform is the research prototype used to evaluate the approach.</div>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:48px">
+      <sc-for list="{{ p.metrics }}" as="m" hint-placeholder-count="3">
+        <div style="background:var(--panel);padding:22px 24px"><div style="font-size:30px;font-weight:700;letter-spacing:-0.03em;color:var(--accent-soft);background-image:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">{{ m.0 }}</div><div style="margin-top:6px;font-size:13px;color:var(--fg-3)">{{ m.1 }}</div></div>
+      </sc-for>
+    </div>
+    <sc-if value="{{ hasHero }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:32px;border-radius:20px;overflow:hidden;border:1px solid var(--tint-line-2);box-shadow:var(--shadow-lg)">{{ heroImg }}</div>
+    </sc-if>
+    <sc-if value="{{ noHero }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:32px;height:clamp(240px,36vw,460px);border-radius:20px;border:1px dashed var(--tint-line-2);background:repeating-linear-gradient(90deg,var(--tint) 0 1px,transparent 1px 32px),repeating-linear-gradient(0deg,var(--tint) 0 1px,transparent 1px 32px),var(--panel);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-4);text-align:center;padding:24px">Hero image — model screenshot or pipeline diagram for “{{ p.title }}”</div>
+    </sc-if>
+    <sc-if value="{{ hasGallery }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:64px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">IN USE — COPILOT FLOW</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:20px">
+          <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="0">
+            <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+              <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line)">{{ g.img }}</div>
+              <figcaption style="display:grid;grid-template-columns:24px 1fr;gap:10px;font-size:13.5px;line-height:1.5;color:var(--fg-3)"><span style="font-family:'IBM Plex Mono',monospace;color:var(--accent)">{{ g.n }}</span>{{ g.cap }}</figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ p.thesis }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:64px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">DEMO — END-TO-END WORKFLOW</div>
+        <p style="margin:12px 0 0;max-width:64ch;color:var(--fg-2b);font-size:15.5px;line-height:1.6">A walkthrough of the platform: loading the federated APS model, linking Primavera P6 activities, 4D/5D status, earned value dashboards, and the AI Copilot acting on the model with human confirmation.</p>
+        <div style="margin-top:24px;border-radius:20px;overflow:hidden;border:1px solid var(--tint-line-2);background:var(--panel);box-shadow:var(--shadow-lg);aspect-ratio:16 / 9;position:relative">{{ demoVideo }}</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+          <sc-for list="{{ demoChapters }}" as="c" hint-placeholder-count="5"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;padding:6px 10px;border-radius:8px;background:var(--tint);border:1px solid var(--tint-line);color:var(--chip-fg)">{{ c }}</span></sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ p.thesis }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:64px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">ARCHITECTURE — AGENTIC INTERACTION LAYER</div>
+        <p style="margin:12px 0 0;color:var(--fg-2b);font-size:15.5px;line-height:1.6">The manager agent decomposes each request into sub-tasks and picks the specialist for each. For every sub-task, the retrieval gate embeds it and scores all MCP method definitions in Qdrant by cosine similarity; only the top-k methods above threshold τ are handed to that specialist — not the full tool catalogue — keeping each agent call token-efficient. If nothing clears τ, a small general model answers directly.</p>
+        <div data-om-raster style="margin-top:24px;border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:clamp(16px,3vw,32px);overflow-x:auto">
+          <div data-arch="grid" style="position:relative;min-width:760px;display:grid;grid-template-columns:150px 28px 170px 28px 64px 56px 190px 28px 130px;grid-template-rows:auto 40px auto 56px auto;align-items:center;justify-content:center;column-gap:0;font-size:14px">
+            <!-- row 1 -->
+            <div style="grid-column:1;grid-row:1 / span 3;border:1px solid var(--line-2);border-radius:14px;padding:18px 16px;text-align:center;background:var(--card-grad)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--accent)">USER</div><div style="margin-top:8px;font-weight:600;font-size:16px">Site engineer</div><div style="margin-top:4px;color:var(--fg-3);font-size:13px">voice or text</div></div>
+            <div style="grid-column:2;grid-row:1 / span 3;height:1px;background:var(--line-2);position:relative"></div>
+            <div data-arch="manager" style="grid-column:3;grid-row:1 / span 3;border:1px solid var(--tint-line-2);border-radius:14px;padding:18px 16px;text-align:center;background:var(--card-grad)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--accent)">ORCHESTRATOR</div><div style="margin-top:8px;font-weight:600;font-size:16px">Manager agent</div><div style="margin-top:4px;color:var(--fg-3);font-size:13px">splits into sub-tasks · assigns a specialist</div></div>
+            <div style="grid-column:4;grid-row:1 / span 3;height:1px;background:var(--line-2);position:relative"></div>
+            <div data-arch="gate" style="grid-column:5;grid-row:1 / span 3;justify-self:center;width:56px;height:56px;border-radius:999px;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--accent-soft);background:var(--tint);position:relative"><span>τ</span><span style="position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;letter-spacing:0.1em;color:var(--accent)">RETRIEVAL GATE</span><span style="position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10.5px;letter-spacing:0.1em;color:var(--fg-4)" data-arch="gatecap">TOP-k ≥ τ</span></div>
+            <div data-arch="lane" style="grid-column:6;grid-row:1 / span 5;position:relative;height:100%">{{ gateArrows }}</div>
+            <div data-arch="db" style="grid-column:7;grid-row:1;border:1px solid var(--line-2);border-radius:14px;padding:16px;text-align:center;background:var(--card-grad)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--accent)">SPECIALIST</div><div style="margin-top:8px;font-weight:600;font-size:16px">Database specialist</div><div style="margin-top:4px;color:var(--fg-3);font-size:13px">CRUD on the SQL Server project database</div><div style="margin-top:8px;display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:var(--accent-soft);border:1px solid var(--tint-line);border-radius:6px;padding:3px 7px">RECEIVES TOP-k TOOLS</div></div>
+            <div style="grid-column:8;grid-row:1;height:1px;background:var(--line-2);position:relative"></div>
+            <div style="grid-column:9;grid-row:1;border:1px solid var(--accent);border-radius:14px;padding:16px 12px;text-align:center;background:var(--tint)"><div style="font-weight:600;font-size:15px">Schedule state</div><div style="margin-top:4px;color:var(--fg-3);font-size:12.5px">P6 · 4D/5D</div></div>
+            <!-- row 5 -->
+            <div data-arch="bim" style="grid-column:7;grid-row:5;border:1px solid var(--line-2);border-radius:14px;padding:16px;text-align:center;background:var(--card-grad)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--accent)">SPECIALIST</div><div style="margin-top:8px;font-weight:600;font-size:16px">BIM specialist</div><div style="margin-top:4px;color:var(--fg-3);font-size:13px">theming and isolation</div><div style="margin-top:8px;display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:var(--accent-soft);border:1px solid var(--tint-line);border-radius:6px;padding:3px 7px">RECEIVES TOP-k TOOLS</div></div>
+            <div style="grid-column:8;grid-row:5;height:1px;background:var(--line-2);position:relative"></div>
+            <div style="grid-column:9;grid-row:5;border:1px solid var(--accent);border-radius:14px;padding:16px 12px;text-align:center;background:var(--tint)"><div style="font-weight:600;font-size:15px">3D viewer</div><div style="margin-top:4px;color:var(--fg-3);font-size:12.5px">live selection</div></div>
+            {{ loopArrows }}
+            <!-- vector store under manager/gate -->
+            <div data-arch="qdrant" style="grid-column:3 / span 3;grid-row:5;border:1px solid var(--line-2);border-radius:14px;padding:16px;text-align:center;background:var(--card-grad)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--accent)">RETRIEVAL</div><div style="margin-top:8px;font-weight:600;font-size:16px">Qdrant vector store</div><div style="margin-top:4px;color:var(--fg-3);font-size:13px">Embedded MCP method definitions · per sub-task cosine search</div></div>
+          </div>
+          <div style="min-width:760px;margin:20px auto 0;max-width:960px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px">
+            <div style="border:1px solid var(--tint-line-2);background:var(--tint);border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--accent);flex:none;white-space:nowrap">SCORE ≥ τ</span><span><strong style="font-weight:600">Route to specialist</strong> <span style="color:var(--fg-3)">with only the top-k matching MCP methods — a fraction of the tool catalogue, so every specialist call stays token-efficient.</span></span></div>
+            <div style="border:1px dashed var(--line-2);border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--fg-4);flex:none;white-space:nowrap">SCORE &lt; τ</span><span><strong style="font-weight:600">Fallback — general chat</strong> <span style="color:var(--fg-3)">answered directly by a small general-purpose model (GPT-4o mini) when no method clears the gate.</span></span></div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:56px;margin-top:64px">
+      <div style="display:flex;flex-direction:column;gap:44px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">PROBLEM</div><p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--fg-2b)">{{ p.problem }}</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">APPROACH</div><p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--fg-2b)">{{ p.approach }}</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">OUTCOME</div><p style="margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--fg-2b)">{{ p.outcome }}</p></div>
+      </div>
+      <aside style="align-self:start;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:24px;display:flex;flex-direction:column;gap:20px;font-size:14px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-4);letter-spacing:0.1em">ROLE</div><div style="margin-top:6px;font-weight:600">{{ p.role }}</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-4);letter-spacing:0.1em">CONTEXT</div><div style="margin-top:6px;font-weight:600">{{ p.client }}</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-4);letter-spacing:0.1em">STACK</div><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><sc-for list="{{ p.stack }}" as="s" hint-placeholder-count="3"><span style="font-size:13px;padding:6px 10px;border-radius:8px;background:var(--tint);border:1px solid var(--tint-line);color:var(--chip-fg)">{{ s }}</span></sc-for></div></div>
+      </aside>
+    </div>
+    <div style="margin-top:80px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px">
+      <a href="{{ prev.href }}" style="color:var(--fg-3);font-size:14px" style-hover="color:var(--accent-soft)">← {{ prev.title }}</a>
+      <a href="{{ next.href }}" style="display:inline-flex;align-items:center;gap:10px;max-width:100%;min-width:0;background:linear-gradient(135deg,var(--accent),#4f6df5);padding:12px 20px;border-radius:12px;font-weight:600;font-size:14px" style-hover="color:var(--fg-strong);filter:brightness(1.1)"><span style="min-width:0">Next: {{ next.title }}</span><span style="flex:none">→</span></a>
+    </div>
+  </article>
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:100;background:var(--lb-bg);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);cursor:zoom-out">
+      <div onClick="{{ stop }}" style="max-width:1700px;width:100%;flex:1;min-height:0;display:grid;grid-template-columns:36px minmax(0,1fr) 36px;gap:16px;align-items:center;justify-items:center;cursor:default">
+        <button onClick="{{ prevImg }}" aria-label="Previous image" style="width:36px;height:36px;border-radius:999px;border:1px solid var(--line-2);background:var(--panel-a);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none;visibility:{{ arrowVis }}" style-hover="background:var(--panel);border-color:var(--tint-line-3)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M15 18l-6-6 6-6"></path></svg></button>
+        <div style="min-width:0;min-height:0;height:100%;display:flex;align-items:center;justify-content:center">{{ lightboxImg }}</div>
+        <button onClick="{{ nextImg }}" aria-label="Next image" style="width:36px;height:36px;border-radius:999px;border:1px solid var(--line-2);background:var(--panel-a);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none;visibility:{{ arrowVis }}" style-hover="background:var(--panel);border-color:var(--tint-line-3)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M9 18l6-6-6-6"></path></svg></button>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;width:100%;max-width:1600px;margin-top:16px;font-size:14px;color:var(--fg-2)">
+        <span style="display:flex;gap:16px;align-items:center"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-4)">{{ lightboxCount }}</span><span>{{ lightboxCap }}</span></span>
+        <button onClick="{{ closeLightbox }}" style="border:1px solid var(--line-2);background:var(--fill);color:var(--fg);padding:8px 14px;border-radius:999px;font:inherit;font-size:13px;cursor:pointer;flex:none;white-space:nowrap" style-hover="background:var(--fill-hover)">Close · Esc</button>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;slug&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;bimpulseai&quot;,&quot;options&quot;:[&quot;bimpulseai&quot;,&quot;analytical-bridge&quot;,&quot;formwork-suite&quot;,&quot;view-manager&quot;,&quot;warning-solver&quot;,&quot;rebar-grasshopper&quot;,&quot;shear-wall-wizard&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Project&quot;},&quot;demoVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Demo&quot;,&quot;description&quot;:&quot;Video file path (assets/demo.mp4) or YouTube / Vimeo URL&quot;}}">
+class Component extends DCLogic {
+  state = { list: null };
+  componentDidMount() {
+    const saved = localStorage.getItem('ya-theme'); if (saved) document.documentElement.setAttribute('data-theme', saved);
+    this.setState({ theme: document.documentElement.getAttribute('data-theme') || 'dark' });
+    import('./content.js').then(m => this.setState({ list: m.projects }));
+    this.onKey = e => { if (!this.state.lightbox) return; if (e.key === 'Escape') this.setState({ lightbox: null }); else if (e.key === 'ArrowRight') this.step(1); else if (e.key === 'ArrowLeft') this.step(-1); };
+    window.addEventListener('keydown', this.onKey);
+    window.addEventListener('resize', this.measure);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.measure); }
+  componentDidUpdate() { this.measure(); }
+  measure = () => {
+    const q = k => document.querySelector(`[data-arch="${k}"]`);
+    const lane = q('lane'), gate = q('gate'), db = q('db'), bim = q('bim'), grid = q('grid'), man = q('manager'), qd = q('qdrant'), cap = q('gatecap');
+    if (!lane || !gate || !db || !bim || !grid || !man || !qd) return;
+    const L = lane.getBoundingClientRect(), G = gate.getBoundingClientRect(), D = db.getBoundingClientRect(), B = bim.getBoundingClientRect(), R = grid.getBoundingClientRect(), M = man.getBoundingClientRect(), Q = qd.getBoundingClientRect();
+    const next = { w: Math.round(L.width), h: Math.round(L.height), y0: Math.round(G.top + G.height / 2 - L.top), y1: Math.round(D.top + D.height / 2 - L.top), y2: Math.round(B.top + B.height / 2 - L.top),
+      gw: Math.round(R.width), gh: Math.round(R.height), mx: Math.round(M.left + M.width / 2 - R.left), mb: Math.round(M.bottom - R.top), gx: Math.round(G.left + G.width / 2 - R.left), gb: Math.round((cap ? cap.getBoundingClientRect().bottom : G.bottom) - R.top) + 6, qt: Math.round(Q.top - R.top) };
+    const cur = this.state.arch;
+    if (!cur || Object.keys(next).some(k => cur[k] !== next[k])) this.setState({ arch: next });
+  };
+  step(d) { const imgs = this.imgs || []; if (!imgs.length) return; this.setState(s => ({ lightbox: { i: (s.lightbox.i + d + imgs.length) % imgs.length } })); }
+  renderVals() {
+    const list = this.state.list || [];
+    const slug = new URLSearchParams(location.search).get('p') || this.props.slug;
+    let i = list.findIndex(p => p.slug === slug); if (i < 0) i = 0;
+    const p = list[i] || {}, n = list.length || 1;
+    const link = q => q ? { title: q.title, href: `Project.dc.html?p=${q.slug}` } : {};
+    const gal = p.gallery || [];
+    const imgs = gal.length ? [...gal, ...(p.hero && !gal.some(g => g[0] === p.hero) ? [[p.hero, p.title]] : [])] : (p.hero ? [[p.hero, p.title]] : []); this.imgs = imgs;
+    const img = (src, alt, idx) => React.createElement('img', { src, alt, title: 'Click to view full size', onClick: e => { e.preventDefault(); e.stopPropagation(); const k = typeof idx === 'number' ? idx : imgs.findIndex(x => x[0] === src); this.setState({ lightbox: { i: k < 0 ? 0 : k } }); }, style: { display: 'block', width: '100%', height: 'auto', transform: 'scale(1.02)', cursor: 'zoom-in' } });
+    const lbi = this.state.lightbox ? this.state.lightbox.i : -1, lbItem = imgs[lbi], lb = lbItem ? { src: lbItem[0], alt: lbItem[1] } : null;
+    const lightboxImg = lb ? React.createElement('img', { key: lb.src, src: lb.src, alt: lb.alt, style: { maxWidth: '100%', maxHeight: '100%', display: 'block', borderRadius: 8, boxShadow: 'var(--shadow-lg)' } }) : null;
+    const gallery = gal.map((g, k) => ({ img: img(g[0], g[1], k), cap: g[1], n: String(k + 1).padStart(2, '0') }));
+    const theme = this.state.theme || 'dark';
+    const icon = theme === 'dark'
+      ? React.createElement('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('circle', { cx: 12, cy: 12, r: 4 }), React.createElement('path', { d: 'M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41' }))
+      : React.createElement('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('path', { d: 'M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' }));
+    const themeVals = { themeIcon: icon, toggleTheme: () => { const t = theme === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', t); localStorage.setItem('ya-theme', t); this.setState({ theme: t }); } };
+    const g = this.state.arch;
+    const gateArrows = g ? React.createElement('svg', { width: g.w, height: g.h, viewBox: `0 0 ${g.w} ${g.h}`, style: { position: 'absolute', inset: 0, overflow: 'visible', display: 'block' } },
+      React.createElement('defs', null, React.createElement('marker', { id: 'archArrow', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, React.createElement('path', { d: 'M0 0 L10 5 L0 10', fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5 }))),
+      React.createElement('path', { d: `M0 ${g.y0} H ${g.w / 2}`, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5 }),
+      React.createElement('path', { d: `M${g.w / 2} ${g.y2 - 8} V ${g.y1 + 8} Q ${g.w / 2} ${g.y1} ${g.w / 2 + 8} ${g.y1} H ${g.w}`, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5, markerEnd: 'url(#archArrow)' }),
+      React.createElement('path', { d: `M${g.w / 2} ${g.y1 + 8} V ${g.y2 - 8} Q ${g.w / 2} ${g.y2} ${g.w / 2 + 8} ${g.y2} H ${g.w}`, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5, markerEnd: 'url(#archArrow)' }),
+      React.createElement('circle', { cx: g.w / 2, cy: g.y0, r: 3, fill: 'var(--accent)' })) : null;
+    const loopArrows = g ? React.createElement('svg', { width: g.gw, height: g.gh, viewBox: `0 0 ${g.gw} ${g.gh}`, style: { position: 'absolute', left: 0, top: 0, overflow: 'visible', pointerEvents: 'none' } },
+      React.createElement('path', { d: `M${g.mx} ${g.mb} V ${g.qt}`, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5, markerEnd: 'url(#archArrow)' }),
+      React.createElement('text', { x: g.mx - 8, y: g.mb + 16, textAnchor: 'end', fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: 1, fill: 'var(--accent)' }, 'EMBED SUB-TASK'),
+      React.createElement('path', { d: `M${g.gx} ${g.qt} V ${g.gb}`, fill: 'none', stroke: 'var(--accent)', strokeWidth: 1.5, markerEnd: 'url(#archArrow)' }),
+      React.createElement('text', { x: g.gx - 8, y: g.qt - 10, textAnchor: 'end', fontFamily: "'IBM Plex Mono',monospace", fontSize: 10, letterSpacing: 1, fill: 'var(--accent)' }, 'TOP-k METHODS')) : null;
+    const demoSrc = p.demoVideo || this.props.demoVideo || '';
+    const isEmbed = /youtube\.com|youtu\.be|vimeo\.com/.test(demoSrc);
+    const embedUrl = demoSrc.replace(/watch\?v=([^&]+).*/, 'embed/$1').replace('youtu.be/', 'www.youtube.com/embed/').replace(/vimeo\.com\/(\d+)/, 'player.vimeo.com/video/$1');
+    const demoVideo = !demoSrc
+      ? React.createElement('div', { style: { position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, background: 'repeating-linear-gradient(90deg,var(--tint) 0 1px,transparent 1px 32px),repeating-linear-gradient(0deg,var(--tint) 0 1px,transparent 1px 32px)' } },
+          React.createElement('div', { style: { width: 64, height: 64, borderRadius: 999, border: '1.5px solid var(--accent)', background: 'var(--tint)', display: 'flex', alignItems: 'center', justifyContent: 'center' } }, React.createElement('svg', { width: 22, height: 22, viewBox: '0 0 24 24', fill: 'var(--accent-soft)' }, React.createElement('path', { d: 'M8 5v14l11-7z' }))),
+          React.createElement('div', { style: { fontFamily: "'IBM Plex Mono',monospace", fontSize: 12, letterSpacing: 1, color: 'var(--fg-4)' } }, 'DEMO VIDEO — drop a file or paste a YouTube / Vimeo link'))
+      : isEmbed
+        ? React.createElement('iframe', { src: embedUrl, title: 'BIMPulseAI demo', allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowFullScreen: true, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 } })
+        : React.createElement('video', { src: demoSrc, controls: true, playsInline: true, preload: 'metadata', poster: p.hero, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', background: '#000' } });
+    const demoChapters = ['00:00 Workspace & APS model', 'P6 schedule linking', '4D / 5D status', 'Earned value dashboard', 'AI Copilot with confirmation'];
+    return { ...themeVals, gateArrows, loopArrows, demoVideo, demoChapters, lightboxOpen: !!lb, lightboxImg, lightboxCap: lb ? lb.alt : '', lightboxCount: `${lbi + 1} / ${imgs.length}`, hasMany: imgs.length > 1, arrowVis: imgs.length > 1 ? 'visible' : 'hidden', prevImg: e => { e.stopPropagation(); this.step(-1); }, nextImg: e => { e.stopPropagation(); this.step(1); }, closeLightbox: () => this.setState({ lightbox: null }), stop: e => e.stopPropagation(), p, heroImg: p.hero ? img(p.hero, p.title, imgs.findIndex(x => x[0] === p.hero)) : null, hasHero: !!p.hero, noHero: !!list.length && !p.hero, hasGallery: gallery.length > 0, gallery, prev: link(list[(i - 1 + n) % n]), next: link(list[(i + 1) % n]) };
+  }
+}
+</script>
+</body>
+</html>

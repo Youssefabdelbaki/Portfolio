@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a14;--panel:#0b0f1e;--panel-a:rgba(11,15,30,0.85);--panel-hover:#0f1530;--card-grad:linear-gradient(180deg,#0d1224,#0a0e1c);--flag-grad:linear-gradient(180deg,#0e1430,#0a0e1c);--flag-glow:radial-gradient(ellipse 70% 90% at 90% 10%,rgba(99,132,255,0.30),transparent 65%);--talk-grad:linear-gradient(135deg,rgba(99,132,255,0.10),rgba(11,15,30,0.6));--hero-bg:radial-gradient(ellipse 50% 60% at 78% 50%,rgba(99,132,255,0.28),transparent 65%),radial-gradient(ellipse 40% 40% at 20% 100%,rgba(56,189,248,0.10),transparent 70%);--dot:rgba(255,255,255,0.10);--fg:#eef1f8;--fg-strong:#fff;--fg-2:#a9b3cc;--fg-2b:#c3cbe0;--fg-3:#8a95b3;--fg-4:#5b6584;--chip-fg:#dbe4ff;--accent:#6f8bff;--accent-soft:#9db4ff;--grad-text:linear-gradient(90deg,#9db4ff,#dbe4ff);--line:rgba(255,255,255,0.08);--line-2:rgba(255,255,255,0.16);--fill:rgba(255,255,255,0.05);--fill-hover:rgba(255,255,255,0.10);--tint:rgba(157,180,255,0.08);--tint-line:rgba(157,180,255,0.20);--tint-line-2:rgba(157,180,255,0.35);--tint-line-3:rgba(157,180,255,0.6);--inv-bg:#eef1f8;--inv-bg-hover:#fff;--inv-fg:#070a14;--shadow-lg:0 24px 60px rgba(0,0,0,0.45);--btn-shadow:0 0 0 1px rgba(157,180,255,0.3),0 12px 40px rgba(79,109,245,0.35);--lb-bg:rgba(4,6,14,0.92);--sb-track:#070a14;--sb-thumb:#2a3350;--sb-thumb-hover:#3b4670;--scheme:dark}
+:root[data-theme="light"]{--bg:#faf9fb;--panel:#ffffff;--panel-a:rgba(255,255,255,0.85);--panel-hover:#f3f4fb;--card-grad:linear-gradient(180deg,#ffffff,#f7f8fc);--flag-grad:linear-gradient(180deg,#ffffff,#f5f6fc);--flag-glow:radial-gradient(ellipse 70% 90% at 90% 10%,rgba(111,139,255,0.18),transparent 65%),radial-gradient(ellipse 40% 60% at 10% 100%,rgba(253,186,140,0.16),transparent 65%);--talk-grad:linear-gradient(135deg,rgba(111,139,255,0.10),rgba(255,255,255,0.7));--hero-bg:radial-gradient(at 8% 12%,rgba(111,139,255,0.28) 0px,transparent 45%),radial-gradient(at 90% 8%,rgba(253,186,140,0.28) 0px,transparent 45%),radial-gradient(at 82% 72%,rgba(244,163,199,0.24) 0px,transparent 50%),radial-gradient(at 22% 90%,rgba(157,180,255,0.30) 0px,transparent 50%),radial-gradient(at 55% 40%,rgba(255,255,255,0.85) 0px,transparent 55%);--dot:rgba(13,18,38,0.12);--fg:#0d1226;--fg-strong:#000;--fg-2:#4a5270;--fg-2b:#3d4560;--fg-3:#5f6786;--fg-4:#8a91a8;--chip-fg:#2c3fa8;--accent:#3b57e0;--accent-soft:#4f6df5;--grad-text:linear-gradient(90deg,#3b57e0,var(--accent));--line:rgba(13,18,38,0.09);--line-2:rgba(13,18,38,0.16);--fill:rgba(255,255,255,0.7);--fill-hover:rgba(13,18,38,0.06);--tint:rgba(79,109,245,0.08);--tint-line:rgba(79,109,245,0.22);--tint-line-2:rgba(79,109,245,0.35);--tint-line-3:rgba(79,109,245,0.6);--inv-bg:#0d1226;--inv-bg-hover:#1a2140;--inv-fg:#fff;--shadow-lg:0 24px 60px rgba(13,18,38,0.14);--btn-shadow:0 12px 32px rgba(59,87,224,0.30);--lb-bg:rgba(250,249,251,0.94);--sb-track:#faf9fb;--sb-thumb:#c9cde0;--sb-thumb-hover:#aeb4cf;--scheme:light}
+html{color-scheme:var(--scheme);scrollbar-color:var(--sb-thumb) var(--sb-track)}
+::-webkit-scrollbar{width:10px;height:10px;background:var(--sb-track)}
+::-webkit-scrollbar-thumb{background:var(--sb-thumb);border-radius:8px;border:2px solid var(--sb-track)}
+::-webkit-scrollbar-thumb:hover{background:var(--sb-thumb-hover)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:var(--fg);text-decoration:none}a:hover{color:var(--accent-soft)}
+html{scroll-behavior:smooth}
+@keyframes orbit{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+</style>
+</helmet>
+<div style="background:var(--bg);position:relative">
+<div style="position:fixed;inset:0;background:var(--hero-bg);pointer-events:none;z-index:0"></div>
+<div style="min-height:100vh;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none"></div>
+  {{ orbit }}
+  <nav style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(20px,4vw,64px);font-size:14px;font-weight:500;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-0.01em"><span style="width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent-soft),#4f6df5);display:inline-block"></span>Abdelbaky</div>
+    <div style="display:flex;gap:6px;background:var(--fill);border:1px solid var(--line);border-radius:999px;padding:4px">
+      <a href="#work" style="padding:8px 16px;border-radius:999px;color:var(--fg-2b)" style-hover="background:var(--line);color:var(--fg-strong)">Work</a><a href="#tools" style="padding:8px 16px;border-radius:999px;color:var(--fg-2b)" style-hover="background:var(--line);color:var(--fg-strong)">Tools</a><a href="#experience" style="padding:8px 16px;border-radius:999px;color:var(--fg-2b)" style-hover="background:var(--line);color:var(--fg-strong)">About</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px"><button onClick="{{ toggleTheme }}" aria-label="Toggle theme" title="Toggle light / dark" style="width:38px;height:38px;border-radius:999px;border:1px solid var(--line-2);background:var(--fill);color:var(--fg);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex:none;padding:0" style-hover="background:var(--fill-hover)">{{ themeIcon }}</button><a href="#contact" style="background:var(--inv-bg);color:var(--inv-fg);padding:10px 18px;border-radius:999px;font-weight:600" style-hover="background:var(--inv-bg-hover);color:var(--inv-fg)">Let's talk</a></div>
+  </nav>
+  <div style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(64px,10vw,140px) clamp(20px,4vw,64px) 96px;text-align:center">
+    
+    <h1 style="margin:0 auto;font-weight:700;font-size:clamp(46px,7vw,104px);line-height:1.0;letter-spacing:-0.04em;max-width:14ch;text-wrap:balance">The AEC stack, <span style="color:var(--accent-soft);background-image:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">rebuilt with AI.</span></h1>
+    <p style="margin:28px auto 0;max-width:58ch;font-size:19px;line-height:1.55;color:var(--fg-2)">Youssef Abdelbaky — Digital Automation Engineer. BIM interoperability, computational design and applied machine learning for structural teams that ship.</p>
+    <div style="display:flex;justify-content:center;gap:12px;margin-top:40px;flex-wrap:wrap">
+      <a href="#work" style="background:linear-gradient(135deg,var(--accent),#4f6df5);padding:14px 26px;border-radius:12px;font-weight:600;font-size:15px;box-shadow:var(--btn-shadow)" style-hover="color:var(--fg-strong);filter:brightness(1.1)">Explore projects</a>
+      <a href="#tools" style="border:1px solid var(--line-2);padding:14px 26px;border-radius:12px;font-weight:600;font-size:15px;background:var(--fill)" style-hover="background:var(--line);color:var(--fg-strong)">Open-source tools</a>
+    </div>
+    <div style="margin:80px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:960px;text-align:left">
+      <sc-for list="{{ caps }}" as="c" hint-placeholder-count="4">
+        <div style="background:var(--panel);padding:22px 22px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.08em">{{ c.k }}</div><div style="margin-top:10px;font-weight:600;font-size:16px">{{ c.t }}</div><div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:var(--fg-3)">{{ c.d }}</div></div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<section id="work" style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,64px) 0">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">01 — SELECTED WORK</div></div>
+  </div>
+  <a href="Project.dc.html?p=bimpulseai" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;margin-top:44px;position:relative;overflow:hidden;border-radius:24px;border:1px solid var(--tint-line-2);background:var(--flag-glow),var(--flag-grad);padding:clamp(28px,4vw,48px);color:var(--fg);transition:border-color .2s,transform .2s" style-hover="border-color:var(--tint-line-3);transform:translateY(-3px);color:var(--fg)">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent-soft)"><span style="background:#4f6df5;color:var(--fg-strong);border-radius:999px;padding:3px 10px">FLAGSHIP</span><span style="border:1px solid var(--tint-line-2);border-radius:999px;padding:3px 10px">MSc THESIS RESEARCH</span><span>AI FOR AEC · 2025</span></div>
+      <h3 style="margin:0;font-size:clamp(34px,4.2vw,56px);font-weight:700;letter-spacing:-0.035em;line-height:1.0">BIMPulse<span style="color:var(--accent-soft);background-image:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">AI</span></h3>
+      <p style="margin:0;font-size:17px;line-height:1.55;color:var(--fg-2);max-width:52ch">The product of my Master's thesis: Autodesk Platform Services, 4D/5D BIM, Primavera schedules, AI agents with RAG, earned value management and automated project analysis — in one workspace.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ flagshipStack }}" as="s" hint-placeholder-count="8"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;padding:6px 10px;border-radius:8px;background:var(--tint);border:1px solid var(--tint-line);color:var(--chip-fg)">{{ s }}</span></sc-for></div>
+      <div style="margin-top:auto;color:var(--accent-soft);font-weight:600;font-size:15px">Read the case study →</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;align-self:center;min-width:0">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid var(--tint-line-2);box-shadow:var(--shadow-lg)"><img src="assets/bimpulse-copilot-result.png" alt="BIMPulse AI Copilot highlighting structural columns in the APS viewer" style="display:block;width:100%;height:auto;transform:scale(1.02)"></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <sc-for list="{{ flagshipCaps }}" as="c" hint-placeholder-count="4">
+          <div style="background:var(--panel-a);padding:14px 16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--accent);letter-spacing:0.08em">{{ c.k }}</div><div style="margin-top:6px;font-weight:600;font-size:13.5px;line-height:1.3">{{ c.t }}</div></div>
+        </sc-for>
+      </div>
+    </div>
+  </a>
+  <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+    <div style="margin-top:56px">
+      <div style="display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px"><h3 style="margin:0;font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ g.name }}</h3><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-4);margin-left:auto">{{ g.count }}</span></div>
+      <div style="display:grid;grid-template-columns:{{ projectCols }};gap:16px;margin-top:20px">
+        <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="2">
+          <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:22px;background:var(--card-grad);border:1px solid var(--line);border-radius:20px;padding:28px;min-height:280px;color:var(--fg);transition:border-color .2s,transform .2s" style-hover="border-color:var(--tint-line-3);transform:translateY(-3px);color:var(--fg)">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent)"><span style="display:inline-flex;align-items:center;gap:6px;border:1px solid var(--tint-line-2);background:var(--tint);border-radius:6px;padding:4px 9px;font-size:11px;color:var(--accent-soft)">{{ p.kind }}</span></div>
+            {{ p.thumb }}
+            <div style="flex:1"><h4 style="margin:0;font-size:22px;font-weight:600;letter-spacing:-0.02em;line-height:1.2">{{ p.title }}</h4><p style="margin:10px 0 0;color:var(--fg-3);font-size:14.5px;line-height:1.55">{{ p.short }}</p></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-3)">{{ p.stackLine }}</span><span style="color:var(--accent-soft);font-weight:600;font-size:14px">Case study →</span></div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</section>
+
+<section id="tools" style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,64px) 0">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">02 — TOOLS & SCRIPTS</div>
+  <h2 style="margin:14px 0 0;font-size:clamp(30px,3.6vw,48px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;max-width:20ch">Small libraries, used daily.</h2>
+  <sc-for list="{{ toolGroups }}" as="g" hint-placeholder-count="4">
+    <div style="margin-top:36px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em;margin-bottom:12px">{{ g.name }}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden">
+        <sc-for list="{{ g.items }}" as="t" hint-placeholder-count="2">
+          <div style="background:var(--panel);padding:24px;display:flex;flex-direction:column;gap:12px" style-hover="background:var(--panel-hover)">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:var(--chip-fg)">{{ t.name }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-4)">★ {{ t.stars }}</span></div>
+            <p style="margin:0;color:var(--fg-3);font-size:14px;line-height:1.55;flex:1">{{ t.desc }}</p>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--fg-3)"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block"></span>{{ t.lang }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</section>
+
+<section id="experience" style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,64px) 0">
+  <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(72px,9vw,128px)">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">03 — EXPERIENCE</div>
+      <h2 style="margin:14px 0 0;font-size:clamp(30px,3.6vw,48px);font-weight:700;letter-spacing:-0.03em;line-height:1.05">Engineer first, then the code.</h2>
+      <div style="margin-top:40px;display:flex;flex-direction:column">
+        <sc-for list="{{ experience }}" as="e" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:96px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--fg-3);line-height:1.6">{{ e.from }}<br>{{ e.to }}</div>
+            <div><div style="font-weight:600;font-size:18px;letter-spacing:-0.01em">{{ e.role }}</div><div style="color:var(--accent-soft);font-size:14px;margin-top:4px">{{ e.org }}</div><p style="margin:10px 0 0;color:var(--fg-3);font-size:14.5px;line-height:1.55">{{ e.text }}</p></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em;margin-top:40px">EDUCATION</div>
+      <div style="margin-top:16px;display:flex;flex-direction:column">
+        <sc-for list="{{ education }}" as="e" hint-placeholder-count="2">
+          <div style="display:grid;grid-template-columns:96px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--fg-3);line-height:1.6">{{ e.from }}<br>{{ e.to }}</div>
+            <div><div style="font-weight:600;font-size:18px;letter-spacing:-0.01em">{{ e.role }}</div><div style="color:var(--accent-soft);font-size:14px;margin-top:4px">{{ e.org }}</div><p style="margin:10px 0 0;color:var(--fg-3);font-size:14.5px;line-height:1.55">{{ e.text }}</p></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.1em">04 — STACK</div>
+      <h2 style="margin:14px 0 0;font-size:clamp(30px,3.6vw,48px);font-weight:700;letter-spacing:-0.03em;line-height:1.05">Fluent across the whole loop.</h2>
+      <div style="margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+        <sc-for list="{{ skills }}" as="s" hint-placeholder-count="4">
+          <div style="border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--panel)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase">{{ s.group }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+              <sc-for list="{{ s.items }}" as="i" hint-placeholder-count="4"><span style="font-size:13px;padding:6px 10px;border-radius:8px;background:var(--tint);border:1px solid var(--tint-line);color:var(--chip-fg)">{{ i }}</span></sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,64px) 48px">
+  <div style="position:relative;overflow:hidden;border-radius:28px;border:1px solid var(--tint-line-2);background:var(--flag-glow),var(--panel);padding:clamp(40px,6vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px;align-items:center">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent-soft);letter-spacing:0.1em">05 — CONTACT</div>
+      <h2 style="margin:14px 0 0;font-size:clamp(32px,4.4vw,60px);font-weight:700;letter-spacing:-0.035em;line-height:1.0;text-wrap:balance">{{ contactHeadline }}</h2>
+      <p style="margin:20px 0 0;color:var(--fg-2);font-size:16px;line-height:1.55;max-width:44ch">{{ contactBody }}</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <a href="mailto:hello@youssefabdelbaky.com" style="display:flex;justify-content:space-between;align-items:center;background:var(--inv-bg);color:var(--inv-fg);padding:16px 22px;border-radius:14px;font-weight:600" style-hover="background:var(--inv-bg-hover);color:var(--inv-fg)"><span>hello@youssefabdelbaky.com</span><span>↗</span></a>
+      <a href="https://www.linkedin.com" style="display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line-2);padding:16px 22px;border-radius:14px;font-weight:500" style-hover="background:var(--fill-hover);color:var(--fg-strong)"><span>LinkedIn</span><span>↗</span></a>
+      <a href="https://github.com/Youssefabdelbaki" style="display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line-2);padding:16px 22px;border-radius:14px;font-weight:500" style-hover="background:var(--fill-hover);color:var(--fg-strong)"><span>GitHub</span><span>↗</span></a>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-4)"><span>© 2026 Youssef Abdelbaky</span><span>Built with code, not templates.</span></div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;openToWork&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Availability&quot;},&quot;projectLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;grid&quot;,&quot;options&quot;:[&quot;grid&quot;,&quot;list&quot;],&quot;tsType&quot;:&quot;'grid' | 'list'&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { data: null };
+  componentDidMount() {
+    const saved = localStorage.getItem('ya-theme'); if (saved) document.documentElement.setAttribute('data-theme', saved);
+    this.setState({ theme: document.documentElement.getAttribute('data-theme') || 'dark' });
+    import('./content.js').then(m => this.setState({ data: m }));
+  }
+  renderVals() {
+    const d = this.state.data || {}, open = this.props.openToWork ?? true;
+    const ring = (s, dur, rev) => React.createElement('div', { style: { position: 'absolute', width: s, height: s, left: '78%', top: '50%', marginLeft: -s / 2, marginTop: -s / 2, borderRadius: '50%', border: '1px solid var(--tint-line)', animation: `orbit ${dur}s linear infinite${rev ? ' reverse' : ''}`, pointerEvents: 'none' } },
+      React.createElement('span', { style: { position: 'absolute', top: -4, left: '50%', width: 8, height: 8, borderRadius: '50%', background: 'var(--accent-soft)', boxShadow: '0 0 16px var(--accent)' } }));
+    const theme = this.state.theme || 'dark';
+    const icon = theme === 'dark'
+      ? React.createElement('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('circle', { cx: 12, cy: 12, r: 4 }), React.createElement('path', { d: 'M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41' }))
+      : React.createElement('svg', { width: 16, height: 16, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('path', { d: 'M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' }));
+    const themeVals = { themeIcon: icon, toggleTheme: () => { const t = theme === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', t); localStorage.setItem('ya-theme', t); this.setState({ theme: t }); } };
+    return { ...themeVals,
+      orbit: React.createElement('div', { style: { position: 'absolute', inset: 0, overflow: 'hidden' } }, ring(520, 40), ring(760, 70, true), ring(1040, 110)),
+      caps: [
+        { k: '01 / BIM', t: 'Revit API & Dynamo', d: 'Model automation, data pipelines, QA at scale.' },
+        { k: '02 / COMPUTE', t: 'Grasshopper & Rhino', d: 'Parametric structures and generative options.' },
+        { k: '03 / ANALYSIS', t: 'ETABS & SAP2000', d: 'Model exchange, batch runs, report generation.' },
+        { k: '04 / AI', t: 'LLMs & RAG', d: 'Agents that read specs, codes and models.' }
+      ],
+      projectCols: (this.props.projectLayout ?? 'grid') === 'list' ? 'minmax(0,1fr)' : 'repeat(auto-fit,minmax(min(100%,300px),1fr))',
+      flagshipStack: ['Blazor', 'ASP.NET Core', 'APS Viewer', 'Semantic Kernel', 'MCP', 'Qdrant', 'SQL Server', 'LangSmith'],
+      flagshipCaps: [
+        { k: 'WORKSPACE', t: 'APS viewer + P6 schedule' },
+        { k: 'COPILOT', t: 'Voice & text, acts on the model' },
+        { k: 'SAFETY', t: 'Highlights, then asks to confirm' },
+        { k: 'DASHBOARD', t: 'PV / EV / AC · SPI · CPI' }
+      ],
+      groups: (d.categories || []).map((name, i) => { const items = (d.projects || []).filter(p => p.cat === name).map(p => ({ ...p, href: `Project.dc.html?p=${p.slug}`, stackLine: p.stack.slice(0, 2).join(' · '),
+          thumb: (p.thumb || p.hero) ? React.createElement('div', { style: { aspectRatio: '16 / 10', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--tint-line-2)', background: 'var(--panel)' } }, React.createElement('img', { src: p.thumb || p.hero, alt: p.title, style: { display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', transform: 'scale(1.02)' } }))
+            : React.createElement('div', { style: { height: 140, borderRadius: 12, border: '1px dashed var(--tint-line-2)', background: 'repeating-linear-gradient(90deg,var(--tint) 0 1px,transparent 1px 24px),repeating-linear-gradient(0deg,var(--tint) 0 1px,transparent 1px 24px)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: 'var(--fg-4)', textAlign: 'center', padding: 12 } }, p.client) }));
+        return { name, num: String(i + 1).padStart(2, '0'), count: items.length + (items.length === 1 ? ' project' : ' projects'), items }; }).filter(g => g.items.length),
+      toolGroups: (d.categories || []).map(name => ({ name: name.toUpperCase(), items: (d.tools || []).filter(t => t.cat === name) })).filter(g => g.items.length), experience: d.experience, education: d.education, skills: d.skills, writing: d.writing, talks: d.talks,
+      contactHeadline: open ? 'Open to senior roles and consulting engagements.' : 'Currently booked — happy to talk about what comes next.',
+      contactBody: open ? 'Automation leads, computational design, AI platform work for AEC firms. Tell me about the bottleneck; I will reply within two working days.' : 'Not taking new work this quarter, but I answer every message about interesting AEC automation problems.'
+    };
+  }
+}
+</script>
+</body>
+</html>
